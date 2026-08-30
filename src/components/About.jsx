@@ -81,12 +81,12 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-10 relative">
         <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-10 md:gap-14 items-stretch">
           <div className="reveal flex justify-center md:justify-start">
-            <div className="relative h-full flex items-end justify-center md:justify-start">
+            <div className="relative w-full max-w-[260px] h-[420px] md:h-[480px] flex items-end justify-center md:justify-start">
               <div className="absolute inset-x-0 bottom-0 h-2/3 rounded-full bg-cyan-glow/25 blur-[60px] opacity-60" />
               <img
                 src={aboutImg}
                 alt="Rishitha Chilaka"
-                className="relative w-56 md:w-full max-w-[260px] max-h-[440px] md:max-h-[480px] object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)]"
+                className="relative h-full w-auto object-cover object-top drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)]"
               />
             </div>
           </div>
