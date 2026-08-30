@@ -1,5 +1,5 @@
 import React from 'react'
-import heroImg from '../assets/hero.jpg'
+import heroImg from '../assets/hero_nobg.png'
 
 const Hero = () => {
   return (
@@ -30,11 +30,11 @@ const Hero = () => {
 
         <div className="reveal relative z-10 mx-auto">
           <div className="relative animate-float">
-            <div className="absolute -inset-4 rounded-[28px] bg-gradient-to-br from-cyan-glow/40 to-gold/20 blur-2xl opacity-50" />
+            <div className="absolute inset-x-0 bottom-0 h-2/3 rounded-full bg-cyan-glow/30 blur-[70px] opacity-60" />
             <img
               src={heroImg}
               alt="Rishitha Chilaka"
-              className="relative w-40 h-52 sm:w-56 sm:h-72 md:w-72 md:h-[22rem] lg:w-80 lg:h-96 object-cover rounded-[24px] glow-border shadow-2xl"
+              className="relative w-48 h-52 sm:w-64 sm:h-72 md:w-80 md:h-[22rem] lg:w-96 lg:h-96 object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.55)]"
             />
           </div>
         </div>
