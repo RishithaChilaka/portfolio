@@ -31,20 +31,13 @@ const Hero = () => {
         {/* fixed ambient glow beneath the photo track */}
         <div className="pointer-events-none absolute inset-x-0 bottom-4 mx-auto w-56 sm:w-64 h-32 sm:h-40 rounded-full bg-cyan-glow/30 blur-[70px] opacity-60 z-[5]" />
 
-        {/* photo: loops continuously from the bottom of the frame to the top, like a scrolling reel */}
-        <div className="reveal absolute inset-0 z-10 flex justify-center overflow-hidden">
-          <div className="flex flex-col items-center animate-scroll-up">
-            {[0, 1].map((k) => (
-              <div key={k} className="py-6 sm:py-8 md:py-10">
-                <img
-                  src={heroImg}
-                  alt={k === 0 ? 'Rishitha Chilaka' : ''}
-                  aria-hidden={k === 1 ? 'true' : undefined}
-                  className="w-48 h-52 sm:w-64 sm:h-72 md:w-80 md:h-[22rem] lg:w-96 lg:h-96 object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.55)]"
-                />
-              </div>
-            ))}
-          </div>
+        {/* photo: rises up from the bottom of the frame and settles in the center, like it's scrolling into place */}
+        <div className="reveal absolute inset-0 z-10 flex items-center justify-center overflow-hidden">
+          <img
+            src={heroImg}
+            alt="Rishitha Chilaka"
+            className="animate-rise-in w-48 h-52 sm:w-64 sm:h-72 md:w-80 md:h-[22rem] lg:w-96 lg:h-96 object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.55)]"
+          />
         </div>
 
         {/* soft fade at the top/bottom edges so the loop feels seamless */}
