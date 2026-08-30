@@ -58,8 +58,9 @@ const MarqueeRow = ({ items, direction }) => (
 
 const About = () => {
   return (
-    <section id="about" className="relative py-24 md:py-32">
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
+    <section id="about" className="relative py-24 md:py-32 overflow-hidden">
+      <div className="pointer-events-none absolute -top-24 -left-24 w-[420px] h-[420px] bg-cyan-glow/10 blur-[140px] rounded-full animate-blob" />
+      <div className="max-w-6xl mx-auto px-6 md:px-10 relative">
         <h2 className="reveal text-3xl md:text-5xl font-black uppercase tracking-tight text-cyan-glow drop-shadow-[0_0_24px_rgba(56,189,248,0.35)] mb-14">
           About
         </h2>

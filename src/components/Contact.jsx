@@ -37,8 +37,9 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="relative py-24 md:py-32">
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
+    <section id="contact" className="relative py-24 md:py-32 overflow-hidden">
+      <div className="pointer-events-none absolute -bottom-24 left-0 w-[480px] h-[480px] bg-cyan-glow/10 blur-[150px] rounded-full animate-blob" />
+      <div className="max-w-6xl mx-auto px-6 md:px-10 relative">
         <h2 className="reveal text-3xl md:text-5xl font-black uppercase tracking-tight text-cyan-glow drop-shadow-[0_0_24px_rgba(56,189,248,0.35)] mb-14">
           Get In Touch
         </h2>
@@ -66,7 +67,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/rishithachilaka/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-full border border-cyan-glow/30 text-sm text-slate-200 hover:bg-cyan-glow/10"
+                  className="px-4 py-2 rounded-full border border-cyan-glow/30 text-sm text-slate-200 hover:bg-cyan-glow/10 hover:scale-105 transition-all duration-300"
                 >
                   LinkedIn
                 </a>
@@ -74,7 +75,7 @@ const Contact = () => {
                   href="https://github.com/RishithaChilaka"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-full border border-cyan-glow/30 text-sm text-slate-200 hover:bg-cyan-glow/10"
+                  className="px-4 py-2 rounded-full border border-cyan-glow/30 text-sm text-slate-200 hover:bg-cyan-glow/10 hover:scale-105 transition-all duration-300"
                 >
                   GitHub
                 </a>
@@ -142,7 +143,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="mt-2 w-full py-3 rounded-full font-semibold text-sm text-[#04121f] bg-gradient-to-r from-cyan-glow to-sky-500 disabled:opacity-60 transition-opacity"
+              className="mt-2 w-full py-3 rounded-full font-semibold text-sm text-[#04121f] bg-gradient-to-r from-cyan-glow to-sky-500 disabled:opacity-60 hover:shadow-[0_0_35px_rgba(56,189,248,0.5)] hover:scale-[1.02] transition-all duration-300"
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>

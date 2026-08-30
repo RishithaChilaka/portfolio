@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section id="top" className="relative pt-24 md:pt-28 pb-20 md:pb-28 overflow-hidden">
       {/* ambient glow */}
-      <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cyan-glow/10 blur-[160px] rounded-full" />
+      <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cyan-glow/10 blur-[160px] rounded-full animate-blob" />
 
       <div className="reveal text-center relative z-10">
         <p className="text-cyan-glow text-sm font-semibold tracking-[0.35em] uppercase">
@@ -13,8 +13,8 @@ const Hero = () => {
         </p>
       </div>
 
-      {/* giant scrolling name behind the photo */}
-      <div className="relative mt-4 md:mt-6 h-[200px] sm:h-[280px] md:h-[360px] lg:h-[420px] flex items-center">
+      {/* giant scrolling name behind the photo, photo scrolls vertically like a reel */}
+      <div className="relative mt-4 md:mt-6 h-[260px] sm:h-[340px] md:h-[440px] lg:h-[500px]">
         <div className="absolute inset-0 flex items-center overflow-hidden select-none pointer-events-none">
           <div className="flex w-max whitespace-nowrap animate-marquee-slow">
             {Array.from({ length: 6 }).map((_, i) => (
@@ -28,16 +28,28 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="reveal relative z-10 mx-auto">
-          <div className="relative animate-float">
-            <div className="absolute inset-x-0 bottom-0 h-2/3 rounded-full bg-cyan-glow/30 blur-[70px] opacity-60" />
-            <img
-              src={heroImg}
-              alt="Rishitha Chilaka"
-              className="relative w-48 h-52 sm:w-64 sm:h-72 md:w-80 md:h-[22rem] lg:w-96 lg:h-96 object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.55)]"
-            />
+        {/* fixed ambient glow beneath the photo track */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-4 mx-auto w-56 sm:w-64 h-32 sm:h-40 rounded-full bg-cyan-glow/30 blur-[70px] opacity-60 z-[5]" />
+
+        {/* photo: loops continuously from the bottom of the frame to the top, like a scrolling reel */}
+        <div className="reveal absolute inset-0 z-10 flex justify-center overflow-hidden">
+          <div className="flex flex-col items-center animate-scroll-up">
+            {[0, 1].map((k) => (
+              <div key={k} className="py-6 sm:py-8 md:py-10">
+                <img
+                  src={heroImg}
+                  alt={k === 0 ? 'Rishitha Chilaka' : ''}
+                  aria-hidden={k === 1 ? 'true' : undefined}
+                  className="w-48 h-52 sm:w-64 sm:h-72 md:w-80 md:h-[22rem] lg:w-96 lg:h-96 object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.55)]"
+                />
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* soft fade at the top/bottom edges so the loop feels seamless */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 md:h-16 bg-gradient-to-b from-ink to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 md:h-16 bg-gradient-to-t from-ink to-transparent z-20" />
       </div>
 
       <div className="reveal relative z-10 text-center max-w-2xl mx-auto mt-10 md:mt-14 px-6">
@@ -49,13 +61,13 @@ const Hero = () => {
         <div className="mt-9 flex flex-wrap gap-4 justify-center">
           <a
             href="#contact"
-            className="px-7 py-3 rounded-full font-semibold text-sm text-[#04121f] bg-gradient-to-r from-cyan-glow to-sky-500 shadow-[0_0_30px_rgba(56,189,248,0.35)] hover:shadow-[0_0_45px_rgba(56,189,248,0.55)] transition-shadow"
+            className="px-7 py-3 rounded-full font-semibold text-sm text-[#04121f] bg-gradient-to-r from-cyan-glow to-sky-500 shadow-[0_0_30px_rgba(56,189,248,0.35)] hover:shadow-[0_0_45px_rgba(56,189,248,0.55)] hover:scale-105 transition-all duration-300"
           >
             Get in Touch
           </a>
           <a
             href="#projects"
-            className="px-7 py-3 rounded-full font-semibold text-sm border border-cyan-glow/40 text-slate-200 hover:bg-cyan-glow/10 transition-colors"
+            className="px-7 py-3 rounded-full font-semibold text-sm border border-cyan-glow/40 text-slate-200 hover:bg-cyan-glow/10 hover:scale-105 transition-all duration-300"
           >
             View Projects
           </a>

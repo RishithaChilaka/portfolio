@@ -37,8 +37,9 @@ const Experience = () => {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
-    <section id="experience" className="relative py-24 md:py-32">
-      <div className="max-w-4xl mx-auto px-6 md:px-10">
+    <section id="experience" className="relative py-24 md:py-32 overflow-hidden">
+      <div className="pointer-events-none absolute top-0 right-0 w-[420px] h-[420px] bg-cyan-glow/10 blur-[140px] rounded-full animate-blob" />
+      <div className="max-w-4xl mx-auto px-6 md:px-10 relative">
         <h2 className="reveal text-3xl md:text-5xl font-black uppercase tracking-tight text-cyan-glow drop-shadow-[0_0_24px_rgba(56,189,248,0.35)] mb-4">
           What I Can Do
         </h2>
@@ -53,7 +54,7 @@ const Experience = () => {
             return (
               <div
                 key={role.title + role.company}
-                className="glass-panel glow-border rounded-[18px] overflow-hidden"
+                className="glass-panel glow-border rounded-[18px] overflow-hidden transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.18)]"
               >
                 <button
                   type="button"

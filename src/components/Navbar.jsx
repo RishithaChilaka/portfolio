@@ -19,15 +19,20 @@ const Navbar = () => {
 
         <nav className="hidden md:flex items-center gap-10 text-sm text-slate-300">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-cyan-glow transition-colors">
+            <a
+              key={l.href}
+              href={l.href}
+              className="relative group hover:text-cyan-glow transition-colors py-1"
+            >
               {l.label}
+              <span className="absolute left-0 -bottom-0.5 h-px w-0 bg-cyan-glow transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <a
             href="/Rishitha_Chilaka_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded-full border border-cyan-glow/40 text-cyan-glow hover:bg-cyan-glow/10 transition-colors"
+            className="px-4 py-2 rounded-full border border-cyan-glow/40 text-cyan-glow hover:bg-cyan-glow/10 hover:scale-105 transition-all duration-300 animate-glow-pulse"
           >
             Resume
           </a>
