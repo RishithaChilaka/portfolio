@@ -67,7 +67,7 @@ body {
   opacity: 0;
 }
 .reveal.is-visible .word-reveal {
-  animation: wordIn 0.45s ease forwards;
+  animation: wordIn 0.7s ease forwards;
 }
 
 ::selection {

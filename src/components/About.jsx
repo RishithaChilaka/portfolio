@@ -63,7 +63,7 @@ const IntroParagraph = () => (
   <p className="text-slate-200 leading-relaxed text-base md:text-lg">
     {introText.split(' ').map((word, i) => (
       <React.Fragment key={i}>
-        <span className="word-reveal" style={{ animationDelay: `${i * 0.035}s` }}>
+        <span className="word-reveal" style={{ animationDelay: `${i * 0.11}s` }}>
           <span className={word.replace(/,$/, '') === 'Rishitha' ? 'text-white font-semibold' : ''}>
             {word}
           </span>
@@ -79,10 +79,6 @@ const About = () => {
     <section id="about" className="relative py-24 md:py-32 overflow-hidden">
       <div className="pointer-events-none absolute -top-24 -left-24 w-[420px] h-[420px] bg-cyan-glow/10 blur-[140px] rounded-full animate-blob" />
       <div className="max-w-6xl mx-auto px-6 md:px-10 relative">
-        <h2 className="reveal text-3xl md:text-5xl font-black uppercase tracking-tight text-cyan-glow drop-shadow-[0_0_24px_rgba(56,189,248,0.35)] mb-14">
-          Intro
-        </h2>
-
         <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-10 md:gap-14 items-stretch">
           <div className="reveal flex justify-center md:justify-start">
             <div className="relative h-full flex items-end justify-center md:justify-start">
@@ -95,7 +91,10 @@ const About = () => {
             </div>
           </div>
 
-          <div className="reveal glass-panel glow-border rounded-[22px] p-8 md:p-10 flex items-center">
+          <div className="reveal glass-panel glow-border rounded-[22px] p-8 md:p-10 flex flex-col justify-center gap-5">
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-cyan-glow drop-shadow-[0_0_24px_rgba(56,189,248,0.35)]">
+              Intro
+            </h2>
             <IntroParagraph />
           </div>
         </div>
