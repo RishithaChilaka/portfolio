@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050b16;
+  color: #eaf2fb;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #eaf6ff 0%, #7dd3fc 45%, #38bdf8 70%, #0ea5e9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-border {
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
+}
+
+.glass-panel {
+  background: rgba(56, 189, 248, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+/* Reveal-on-scroll utility, toggled via IntersectionObserver in useReveal.js */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+::selection {
+  background: #38bdf8;
+  color: #04121f;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050b16;
+}
+::-webkit-scrollbar-thumb {
+  background: #123048;
+  border-radius: 8px;
+}
