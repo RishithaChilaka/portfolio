@@ -56,13 +56,31 @@ const MarqueeRow = ({ items, direction }) => (
   </div>
 )
 
+const introText =
+  "Hey, I'm Rishitha, an AI/ML Engineer with 4+ years of experience building production machine learning and Generative AI systems. I specialize in RAG, LLM evaluation, retrieval pipelines, and NLP, with hands-on experience turning AI prototypes into reliable, measurable production systems. I enjoy solving challenging problems at the intersection of ML, data, and software engineering."
+
+const IntroParagraph = () => (
+  <p className="text-slate-200 leading-relaxed text-base md:text-lg">
+    {introText.split(' ').map((word, i) => (
+      <React.Fragment key={i}>
+        <span className="word-reveal" style={{ animationDelay: `${i * 0.035}s` }}>
+          <span className={word.replace(/,$/, '') === 'Rishitha' ? 'text-white font-semibold' : ''}>
+            {word}
+          </span>
+        </span>
+        {' '}
+      </React.Fragment>
+    ))}
+  </p>
+)
+
 const About = () => {
   return (
     <section id="about" className="relative py-24 md:py-32 overflow-hidden">
       <div className="pointer-events-none absolute -top-24 -left-24 w-[420px] h-[420px] bg-cyan-glow/10 blur-[140px] rounded-full animate-blob" />
       <div className="max-w-6xl mx-auto px-6 md:px-10 relative">
         <h2 className="reveal text-3xl md:text-5xl font-black uppercase tracking-tight text-cyan-glow drop-shadow-[0_0_24px_rgba(56,189,248,0.35)] mb-14">
-          About
+          Intro
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-10 md:gap-14 items-stretch">
@@ -78,14 +96,7 @@ const About = () => {
           </div>
 
           <div className="reveal glass-panel glow-border rounded-[22px] p-8 md:p-10 flex items-center">
-            <p className="text-slate-200 leading-relaxed text-base md:text-lg">
-              Hey, I'm <span className="text-white font-semibold">Rishitha</span>, an AI/ML
-              Engineer with 4+ years of experience building production machine learning and
-              Generative AI systems. I specialize in RAG, LLM evaluation, retrieval pipelines,
-              and NLP, with hands-on experience turning AI prototypes into reliable, measurable
-              production systems. I enjoy solving challenging problems at the intersection of
-              ML, data, and software engineering.
-            </p>
+            <IntroParagraph />
           </div>
         </div>
 

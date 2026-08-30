@@ -47,6 +47,29 @@ body {
   transform: translateY(0);
 }
 
+/* Word-by-word "live typing" reveal, used for the intro bio text.
+   Words sit invisible until the ancestor .reveal panel becomes visible,
+   then each animates in with a per-word delay set inline via style. */
+@keyframes wordIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+.word-reveal {
+  display: inline-block;
+  opacity: 0;
+}
+.reveal.is-visible .word-reveal {
+  animation: wordIn 0.45s ease forwards;
+}
+
 ::selection {
   background: #38bdf8;
   color: #04121f;
