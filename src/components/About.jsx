@@ -86,7 +86,7 @@ const About = () => {
               <img
                 src={aboutImg}
                 alt="Rishitha Chilaka"
-                className="relative w-48 md:w-full max-w-[220px] max-h-[380px] md:max-h-[420px] object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)]"
+                className="relative w-56 md:w-full max-w-[260px] max-h-[440px] md:max-h-[480px] object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)]"
               />
             </div>
           </div>

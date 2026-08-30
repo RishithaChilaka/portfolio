@@ -27,7 +27,7 @@ const Navbar = () => {
               key={l.href}
               href={l.href}
               className="drop-in relative group hover:text-cyan-glow transition-colors py-1"
-              style={{ animationDelay: `${0.1 + i * 0.08}s` }}
+              style={{ animationDelay: `${0.25 + i * 0.22}s` }}
             >
               {l.label}
               <span className="absolute left-0 -bottom-0.5 h-px w-0 bg-cyan-glow transition-all duration-300 group-hover:w-full" />
@@ -40,8 +40,8 @@ const Navbar = () => {
             className="px-4 py-2 rounded-full border border-cyan-glow/40 text-cyan-glow hover:bg-cyan-glow/10 hover:scale-105 transition-all duration-300"
             style={{
               opacity: 0,
-              animation: 'dropIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards, glowPulse 3s ease-in-out infinite',
-              animationDelay: `${0.1 + links.length * 0.08}s, ${0.1 + links.length * 0.08}s`,
+              animation: 'dropIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards, glowPulse 3s ease-in-out infinite',
+              animationDelay: `${0.25 + links.length * 0.22}s, ${0.25 + links.length * 0.22}s`,
             }}
           >
             Resume
@@ -50,7 +50,7 @@ const Navbar = () => {
 
         <button
           className="drop-in md:hidden text-slate-200"
-          style={{ animationDelay: '0.1s' }}
+          style={{ animationDelay: '0.25s' }}
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
