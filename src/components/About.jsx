@@ -91,7 +91,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="reveal md:self-start glass-panel glow-border rounded-[22px] p-6 md:p-7 flex flex-col justify-center gap-3">
+          <div className="reveal glass-panel glow-border rounded-[22px] p-6 md:p-8 flex flex-col justify-center gap-3">
             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-cyan-glow drop-shadow-[0_0_24px_rgba(56,189,248,0.35)]">
               Intro
             </h2>
