@@ -76,7 +76,7 @@ const IntroParagraph = () => (
 
 const About = () => {
   return (
-    <section id="about" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="about" className="relative py-14 md:py-20 overflow-hidden">
       <div className="pointer-events-none absolute -top-24 -left-24 w-[420px] h-[420px] bg-cyan-glow/10 blur-[140px] rounded-full animate-blob" />
       <div className="max-w-6xl mx-auto px-6 md:px-10 relative">
         <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-10 md:gap-14 items-stretch">
@@ -86,12 +86,12 @@ const About = () => {
               <img
                 src={aboutImg}
                 alt="Rishitha Chilaka"
-                className="relative w-56 md:w-full max-w-xs h-full object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)]"
+                className="relative w-48 md:w-full max-w-[220px] max-h-[380px] md:max-h-[420px] object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)]"
               />
             </div>
           </div>
 
-          <div className="reveal glass-panel glow-border rounded-[22px] p-8 md:p-10 flex flex-col justify-center gap-5">
+          <div className="reveal glass-panel glow-border rounded-[22px] p-6 md:p-8 flex flex-col justify-center gap-3">
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-cyan-glow drop-shadow-[0_0_24px_rgba(56,189,248,0.35)]">
               Intro
             </h2>
@@ -99,7 +99,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="reveal grid grid-cols-1 sm:grid-cols-2 gap-6 mt-14">
+        <div className="reveal grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
           {skillGroups.map((group) => (
             <div key={group.title}>
               <h4 className="text-xs uppercase tracking-[0.2em] text-cyan-glow font-semibold mb-3">
@@ -121,7 +121,7 @@ const About = () => {
       </div>
 
       {/* scrolling skills marquee — three rows, alternating direction */}
-      <div className="mt-16 border-y border-cyan-glow/10 bg-panel/60 py-5 space-y-3">
+      <div className="mt-10 border-y border-cyan-glow/10 bg-panel/60 py-5 space-y-3">
         <MarqueeRow items={marqueeRows[0]} direction="forward" />
         <MarqueeRow items={marqueeRows[1]} direction="reverse" />
         <MarqueeRow items={marqueeRows[2]} direction="forward" />
