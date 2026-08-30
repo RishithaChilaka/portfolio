@@ -16,7 +16,7 @@ const RevealedName = () => {
           {Array.from(word.text).map((ch) => {
             i += 1
             return (
-              <span key={i} className="word-reveal" style={{ animationDelay: `${i * 0.06}s` }}>
+              <span key={i} className="word-reveal" style={{ animationDelay: `${i * 0.14}s` }}>
                 <span className={word.className}>{ch}</span>
               </span>
             )
@@ -53,7 +53,6 @@ const Hero = () => {
           />
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 md:h-16 bg-gradient-to-b from-ink to-transparent z-20" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 md:h-16 bg-gradient-to-t from-ink to-transparent z-20" />
       </div>
 
