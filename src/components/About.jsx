@@ -81,7 +81,7 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-10 relative">
         <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-10 md:gap-14 items-stretch">
           <div className="reveal flex justify-center md:justify-start">
-            <div className="relative w-full max-w-[280px] h-[500px] md:h-[580px] flex items-end justify-center md:justify-start">
+            <div className="relative w-full max-w-[320px] h-[560px] md:h-[660px] flex items-end justify-center md:justify-start">
               <div className="absolute inset-x-0 bottom-0 h-2/3 rounded-full bg-cyan-glow/25 blur-[60px] opacity-60" />
               <img
                 src={aboutImg}
@@ -91,8 +91,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="reveal glass-panel glow-border rounded-[22px] p-6 md:p-8 flex flex-col justify-center gap-3">
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-cyan-glow drop-shadow-[0_0_24px_rgba(56,189,248,0.35)]">
+          <div className="reveal md:self-start glass-panel glow-border rounded-[22px] p-6 md:p-7 flex flex-col justify-center gap-3">
+            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-cyan-glow drop-shadow-[0_0_24px_rgba(56,189,248,0.35)]">
               Intro
             </h2>
             <IntroParagraph />
