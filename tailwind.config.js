@@ -64,7 +64,7 @@ export default {
         'marquee-reverse': 'marqueeReverse 26s linear infinite',
         float: 'float 4.5s ease-in-out infinite',
         'scroll-up': 'scrollUp 11s linear infinite',
-        'rise-in': 'riseIn 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        'rise-in': 'riseIn 3.2s cubic-bezier(0.22, 1, 0.36, 1) forwards',
         'fade-in': 'fadeIn 1s ease-out forwards',
         'glow-pulse': 'glowPulse 3s ease-in-out infinite',
         blob: 'blob 12s ease-in-out infinite',
