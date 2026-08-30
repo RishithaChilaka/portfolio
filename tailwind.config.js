@@ -26,9 +26,21 @@ export default {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        marqueeReverse: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-14px)' },
+        },
       },
       animation: {
         marquee: 'marquee 30s linear infinite',
+        'marquee-slow': 'marquee 48s linear infinite',
+        'marquee-fast': 'marquee 20s linear infinite',
+        'marquee-reverse': 'marqueeReverse 26s linear infinite',
+        float: 'float 4.5s ease-in-out infinite',
       },
     },
   },

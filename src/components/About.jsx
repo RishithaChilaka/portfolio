@@ -29,7 +29,32 @@ const skillGroups = [
   },
 ]
 
-const marqueeItems = skillGroups.flatMap((g) => g.items)
+const allSkills = skillGroups.flatMap((g) => g.items)
+const third = Math.ceil(allSkills.length / 3)
+const marqueeRows = [
+  allSkills.slice(0, third),
+  allSkills.slice(third, third * 2),
+  allSkills.slice(third * 2),
+]
+
+const MarqueeRow = ({ items, direction }) => (
+  <div className="overflow-hidden">
+    <div
+      className={`flex w-max whitespace-nowrap ${
+        direction === 'reverse' ? 'animate-marquee-reverse' : 'animate-marquee'
+      }`}
+    >
+      {[...items, ...items].map((item, i) => (
+        <span key={i} className="flex items-center">
+          <span className="text-slate-400 font-medium tracking-widest px-6 text-sm md:text-base">
+            {item}
+          </span>
+          <span className="text-cyan-glow/60 font-bold">·</span>
+        </span>
+      ))}
+    </div>
+  </div>
+)
 
 const About = () => {
   return (
@@ -81,18 +106,11 @@ const About = () => {
         </div>
       </div>
 
-      {/* scrolling skills marquee */}
-      <div className="mt-16 border-y border-cyan-glow/10 bg-panel/60 py-4 overflow-hidden">
-        <div className="flex w-max animate-marquee whitespace-nowrap">
-          {[...marqueeItems, ...marqueeItems].map((item, i) => (
-            <span key={i} className="flex items-center">
-              <span className="text-slate-400 font-medium tracking-widest px-6 text-sm md:text-base">
-                {item}
-              </span>
-              <span className="text-cyan-glow/60 font-bold">·</span>
-            </span>
-          ))}
-        </div>
+      {/* scrolling skills marquee — three rows, alternating direction */}
+      <div className="mt-16 border-y border-cyan-glow/10 bg-panel/60 py-5 space-y-3">
+        <MarqueeRow items={marqueeRows[0]} direction="forward" />
+        <MarqueeRow items={marqueeRows[1]} direction="reverse" />
+        <MarqueeRow items={marqueeRows[2]} direction="forward" />
       </div>
     </section>
   )
