@@ -1,6 +1,33 @@
 import React from 'react'
 import heroImg from '../assets/hero_nobg.png'
 
+// Name is revealed letter by letter, once, on load — no looping.
+const NAME_WORDS = [
+  { text: 'RISHITHA', className: 'text-white' },
+  { text: 'CHILAKA', className: 'text-cyan-glow' },
+]
+
+const RevealedName = () => {
+  let i = -1
+  return (
+    <h1 className="reveal select-none text-[11vw] sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-none drop-shadow-[0_0_50px_rgba(56,189,248,0.3)]">
+      {NAME_WORDS.map((word, wi) => (
+        <React.Fragment key={word.text}>
+          {Array.from(word.text).map((ch) => {
+            i += 1
+            return (
+              <span key={i} className="word-reveal" style={{ animationDelay: `${i * 0.06}s` }}>
+                <span className={word.className}>{ch}</span>
+              </span>
+            )
+          })}
+          {wi < NAME_WORDS.length - 1 && <span className="inline-block w-3 md:w-5" />}
+        </React.Fragment>
+      ))}
+    </h1>
+  )
+}
+
 const Hero = () => {
   return (
     <section id="top" className="relative pt-24 md:pt-28 pb-20 md:pb-28 overflow-hidden">
@@ -8,30 +35,16 @@ const Hero = () => {
       <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cyan-glow/10 blur-[160px] rounded-full animate-blob" />
 
       <div className="reveal text-center relative z-10">
-        <p className="text-cyan-glow text-sm font-semibold tracking-[0.35em] uppercase">
+        <p className="text-cyan-glow text-sm font-semibold tracking-[0.35em] uppercase mb-4">
           AI / ML Engineer
         </p>
+        <RevealedName />
       </div>
 
-      {/* giant scrolling name behind the photo, photo scrolls vertically like a reel */}
-      <div className="relative mt-4 md:mt-6 h-[260px] sm:h-[340px] md:h-[440px] lg:h-[500px]">
-        <div className="absolute inset-0 flex items-center overflow-hidden select-none pointer-events-none">
-          <div className="flex w-max whitespace-nowrap animate-marquee-slow">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <span
-                key={i}
-                className="text-[18vw] sm:text-[13vw] md:text-8xl lg:text-9xl font-black uppercase tracking-tight leading-none text-gradient px-6 md:px-10 drop-shadow-[0_0_50px_rgba(56,189,248,0.3)]"
-              >
-                Rishitha&nbsp;Chilaka
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* fixed ambient glow beneath the photo track */}
+      {/* photo: rises up from the bottom of the frame and settles at the bottom line */}
+      <div className="relative mt-8 md:mt-10 h-[220px] sm:h-[300px] md:h-[380px] lg:h-[430px]">
         <div className="pointer-events-none absolute inset-x-0 bottom-4 mx-auto w-56 sm:w-64 h-32 sm:h-40 rounded-full bg-cyan-glow/30 blur-[70px] opacity-60 z-[5]" />
 
-        {/* photo: rises up from the bottom of the frame and settles in the center, like it's scrolling into place */}
         <div className="reveal absolute inset-0 z-10 flex items-end justify-center overflow-hidden">
           <img
             src={heroImg}
@@ -40,7 +53,6 @@ const Hero = () => {
           />
         </div>
 
-        {/* soft fade at the top/bottom edges so the loop feels seamless */}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-10 md:h-16 bg-gradient-to-b from-ink to-transparent z-20" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 md:h-16 bg-gradient-to-t from-ink to-transparent z-20" />
       </div>

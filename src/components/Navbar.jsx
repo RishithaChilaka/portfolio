@@ -13,16 +13,21 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-ink/70 border-b border-cyan-glow/10">
       <div className="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
-        <a href="#top" className="font-extrabold tracking-widest text-sm md:text-base text-white">
+        <a
+          href="#top"
+          className="drop-in font-extrabold tracking-widest text-sm md:text-base text-white"
+          style={{ animationDelay: '0s' }}
+        >
           RISHITHA<span className="text-cyan-glow">.</span>CHILAKA
         </a>
 
         <nav className="hidden md:flex items-center gap-10 text-sm text-slate-300">
-          {links.map((l) => (
+          {links.map((l, i) => (
             <a
               key={l.href}
               href={l.href}
-              className="relative group hover:text-cyan-glow transition-colors py-1"
+              className="drop-in relative group hover:text-cyan-glow transition-colors py-1"
+              style={{ animationDelay: `${0.1 + i * 0.08}s` }}
             >
               {l.label}
               <span className="absolute left-0 -bottom-0.5 h-px w-0 bg-cyan-glow transition-all duration-300 group-hover:w-full" />
@@ -32,14 +37,20 @@ const Navbar = () => {
             href="/Rishitha_Chilaka_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded-full border border-cyan-glow/40 text-cyan-glow hover:bg-cyan-glow/10 hover:scale-105 transition-all duration-300 animate-glow-pulse"
+            className="px-4 py-2 rounded-full border border-cyan-glow/40 text-cyan-glow hover:bg-cyan-glow/10 hover:scale-105 transition-all duration-300"
+            style={{
+              opacity: 0,
+              animation: 'dropIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards, glowPulse 3s ease-in-out infinite',
+              animationDelay: `${0.1 + links.length * 0.08}s, ${0.1 + links.length * 0.08}s`,
+            }}
           >
             Resume
           </a>
         </nav>
 
         <button
-          className="md:hidden text-slate-200"
+          className="drop-in md:hidden text-slate-200"
+          style={{ animationDelay: '0.1s' }}
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
