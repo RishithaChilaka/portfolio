@@ -22,7 +22,7 @@ const experience = [
     title: 'Machine Learning Engineer',
     company: 'IBM',
     location: 'Bangalore',
-    period: 'Oct 2020 — Mar 2023',
+    period: 'Jan 2020 — Jul 2022',
     points: [
       'Built anomaly detection models processing 450K+ logs/hour, cutting false positives by 32%.',
       'Developed and evaluated NLP classification models with spaCy, improving accuracy by 26%.',
