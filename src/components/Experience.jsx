@@ -34,7 +34,7 @@ const experience = [
 ]
 
 const Experience = () => {
-  const [openIndex, setOpenIndex] = useState(0)
+  const [openIndex, setOpenIndex] = useState(-1)
 
   return (
     <section id="experience" className="relative py-24 md:py-32 overflow-hidden">
