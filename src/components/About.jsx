@@ -3,29 +3,39 @@ import aboutImg from '../assets/about_nobg.png'
 
 const skillGroups = [
   {
+    title: 'Generative AI & LLMs',
+    items: [
+      'Retrieval Augmented Generation (RAG)', 'Large Language Models (LLMs)', 'LangChain',
+      'LangGraph', 'Re-Ranking', 'Vector Embeddings', 'Semantic Search', 'Prompt Engineering',
+      'Azure OpenAI', 'Anthropic', 'MCP', 'LoRA/PEFT', 'Hugging Face Transformers',
+    ],
+  },
+  {
+    title: 'LLM Evaluation',
+    items: [
+      'LLM-as-a-Judge', 'Golden Datasets', 'Evaluation Harnesses', 'Recall@K',
+      'Groundedness/Faithfulness Evaluation', 'Regression Testing', 'Error Analysis',
+      'Human-in-the-Loop',
+    ],
+  },
+  {
+    title: 'Machine Learning',
+    items: ['PyTorch', 'Scikit-learn', 'NLP', 'Feature Engineering', 'Document Classification'],
+  },
+  {
+    title: 'AI/ML Systems & MLOps',
+    items: [
+      'Vector Databases', 'pgvector', 'Retrieval Pipelines', 'MLflow', 'CI/CD',
+      'GitHub Actions', 'Docker', 'Model Versioning',
+    ],
+  },
+  {
+    title: 'Cloud',
+    items: ['Microsoft Azure', 'AWS', 'Databricks'],
+  },
+  {
     title: 'Languages & Data',
-    items: ['Python', 'SQL', 'Bash', 'Git', 'Pandas', 'NumPy'],
-  },
-  {
-    title: 'GenAI & LLMs',
-    items: [
-      'RAG', 'LLMs', 'Azure OpenAI', 'Hugging Face', 'Vector Embeddings',
-      'Semantic Search', 'Re-ranking', 'Prompt Engineering', 'Hallucination Mitigation',
-    ],
-  },
-  {
-    title: 'ML & Evaluation',
-    items: [
-      'PyTorch', 'Scikit-learn', 'NLP', 'Document Classification', 'Feature Engineering',
-      'Golden Datasets', 'Recall@K', 'Groundedness Evaluation', 'Error Analysis',
-    ],
-  },
-  {
-    title: 'MLOps & Cloud',
-    items: [
-      'MLflow', 'GitHub Actions', 'Docker', 'Model Monitoring', 'Model Versioning',
-      'CI/CD', 'pgvector', 'Vector Databases', 'OCR', 'Microsoft Azure',
-    ],
+    items: ['Python', 'SQL', 'Git', 'Pandas', 'NumPy'],
   },
 ]
 
@@ -57,7 +67,7 @@ const MarqueeRow = ({ items, direction }) => (
 )
 
 const introText =
-  "Hey, I'm Rishitha, an AI/ML Engineer with 4+ years of experience building production machine learning and Generative AI systems. I specialize in RAG, LLM evaluation, retrieval pipelines, and NLP, with hands-on experience turning AI prototypes into reliable, measurable production systems. I enjoy solving challenging problems at the intersection of ML, data, and software engineering."
+  "Hey, I'm Rishitha, an AI/ML Engineer with 4+ years of experience building production machine learning and Generative AI systems. I specialize in RAG, LLM evaluation, retrieval pipelines, with hands-on experience turning AI prototypes into reliable, measurable production systems. I enjoy solving challenging problems at the intersection of ML, data, and software engineering."
 
 const IntroParagraph = () => (
   <p className="text-slate-200 leading-relaxed text-base md:text-lg">

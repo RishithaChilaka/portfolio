@@ -59,7 +59,7 @@ const Hero = () => {
       <div className="reveal relative z-10 text-center max-w-2xl mx-auto mt-4 md:mt-6 px-6">
         <p className="text-slate-300 leading-relaxed">
           4+ years building production Machine Learning and Generative AI systems —
-          retrieval-augmented generation, LLM evaluation, and NLP — turning AI prototypes
+          retrieval-augmented generation, LLM evaluation — turning AI prototypes
           into reliable, measurable systems.
         </p>
         <div className="mt-6 flex flex-wrap gap-4 justify-center">
